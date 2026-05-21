@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #050508;
+    --bg-secondary: #0a0a12;
+    --bg-tertiary: #10101c;
+    --bg-grid: #0d0d18;
+    --border-subtle: #1a1a2e;
+    --border-active: #2a2a4e;
+    --text-primary: #e0e0f0;
+    --text-secondary: #6b6b8d;
+    --text-muted: #3d3d5c;
+    --accent-phase: #00f0c8;
+    --accent-coherence: #7c3aed;
+    --accent-nuclear: #f59e0b;
+    --accent-valid: #10b981;
+    --accent-warn: #ef4444;
+    --accent-portante: #3b82f6;
+    --glow-phase: rgba(0, 240, 200, 0.15);
+    --glow-nuclear: rgba(245, 158, 11, 0.12);
+
+    --background: 240 33% 3%;
+    --foreground: 240 20% 94%;
+    --card: 240 33% 5%;
+    --card-foreground: 240 20% 94%;
+    --popover: 240 33% 5%;
+    --popover-foreground: 240 20% 94%;
+    --primary: 168 100% 47%;
+    --primary-foreground: 240 33% 3%;
+    --secondary: 240 25% 10%;
+    --secondary-foreground: 240 20% 94%;
+    --muted: 240 20% 12%;
+    --muted-foreground: 240 15% 40%;
+    --accent: 168 100% 47%;
+    --accent-foreground: 240 33% 3%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 25% 14%;
+    --input: 240 25% 14%;
+    --ring: 168 100% 47%;
+    --radius: 0.625rem;
+  }
+
+  body {
+    font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    @apply border-[#1a1a2e];
+  }
+
+  ::selection {
+    background: rgba(0, 240, 200, 0.25);
+    color: #e0e0f0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-subtle);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--border-active);
+  }
+}
+
+@layer components {
+  .font-mono-data {
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
+  }
+
+  .glow-phase {
+    box-shadow: 0 0 20px rgba(0, 240, 200, 0.15), 0 0 40px rgba(0, 240, 200, 0.08);
+  }
+
+  .glow-nuclear {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.12), 0 0 40px rgba(245, 158, 11, 0.06);
+  }
+
+  .text-glow-phase {
+    text-shadow: 0 0 10px rgba(0, 240, 200, 0.4), 0 0 20px rgba(0, 240, 200, 0.2);
+  }
+
+  .card-base {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+  }
+
+  .card-hover {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-hover:hover {
+    border-color: var(--border-active);
+    box-shadow: 0 0 20px rgba(0, 240, 200, 0.06);
+  }
+
+  .metric-value {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .label-upper {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  .btn-primary {
+    background: var(--accent-phase);
+    color: var(--bg-primary);
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  .btn-primary:hover {
+    background: #00d4b0;
+    box-shadow: 0 0 20px rgba(0, 240, 200, 0.3);
+  }
+
+  .btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-subtle);
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  .btn-secondary:hover {
+    border-color: var(--border-active);
+    background: var(--border-subtle);
+  }
+
+  .input-base {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: border-color 0.2s ease;
+  }
+  .input-base:focus {
+    outline: none;
+    border-color: var(--accent-phase);
+    box-shadow: 0 0 0 2px rgba(0, 240, 200, 0.15);
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes flash-metric {
+    0% { text-shadow: 0 0 0 transparent; }
+    50% { text-shadow: 0 0 12px currentColor; }
+    100% { text-shadow: 0 0 0 transparent; }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-flash-metric {
+    animation: flash-metric 0.2s ease-out;
+  }
+}
