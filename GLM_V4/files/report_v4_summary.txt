@@ -1,0 +1,53 @@
+======================================================================
+SIMULAZIONE BASE π v4.1 — REPORT DI VERIFICA
+======================================================================
+
+Grid: 7×6×6 = 252 nodi
+Materiali: Ni_pure_powder + serpentine_nanostructured
+φ range: [0.0000, 31.4159]
+dφ: 0.01
+Passi totali: 3142
+
+──────────────────────────────────────────────────
+FIRMA STRUTTURALE FINALE:
+  sigma_Cn        = 0.281003
+  Dratio          = 45.647335
+  Jpol_mean       = 1.174964
+  rho_pol         = 0.863208
+  Cvert           = 0.961549
+  P_pi_max        = 1.000000
+  E_pi_max        = 0.001449
+
+──────────────────────────────────────────────────
+VALIDAZIONE:
+  pi_algebra_operational         = True
+  no_hidden_t                    = True
+  readout_non_destructive        = True
+  guardrails_met                 = True
+  nucleation_seeds_found         = 15068
+  stable_phi_cycles              = 3.377267892410383
+  total_phi_steps                = 3142
+
+──────────────────────────────────────────────────
+LOG PER CICLO:
+  Cycle 0 | φ=0.0000 | σ(Cn)=0.189690 Dratio=3.3165 Jpol=0.992393 ρpol=0.863208 Cvert=0.324090 E_π=0.000292
+  Cycle 1 | φ=6.3000 | σ(Cn)=0.211030 Dratio=9.2494 Jpol=1.145382 ρpol=0.863208 Cvert=0.786785 E_π=0.016226
+  Cycle 2 | φ=12.5800 | σ(Cn)=0.396954 Dratio=18.9253 Jpol=1.167931 ρpol=0.863208 Cvert=0.978769 E_π=0.000617
+  Cycle 3 | φ=18.8600 | σ(Cn)=0.224559 Dratio=29.6728 Jpol=1.124929 ρpol=0.863208 Cvert=0.938304 E_π=0.003346
+  Cycle 4 | φ=25.1400 | σ(Cn)=0.414182 Dratio=38.3943 Jpol=1.174692 ρpol=0.863208 Cvert=0.946267 E_π=0.000115
+
+──────────────────────────────────────────────────
+Semi di nucleazione trovati: 15068
+Primi 10 semi:
+  z=0.000 r=0.000 c=0.000 φ=10.2000 P=0.7982
+  z=0.000 r=0.000 c=0.200 φ=10.2000 P=0.7797
+  z=0.000 r=0.200 c=0.000 φ=10.2000 P=1.0000
+  z=0.000 r=0.200 c=0.200 φ=10.2000 P=0.8698
+  z=0.000 r=0.200 c=0.400 φ=10.2000 P=0.9159
+  z=0.167 r=0.000 c=0.000 φ=10.2000 P=0.8020
+  z=0.167 r=0.000 c=0.200 φ=10.2000 P=0.8087
+  z=0.167 r=0.000 c=0.400 φ=10.2000 P=0.8480
+  z=0.167 r=0.200 c=0.000 φ=10.2000 P=0.7812
+  z=0.167 r=0.200 c=0.200 φ=10.2000 P=0.8646
+
+NOTE: La fase non mente. Cerca la firma, non il joule.
